@@ -33,8 +33,6 @@ jobs:
   test:
     name: Test Stage
     runs-on: ubuntu-latest
-    outputs:
-      test_status: ${{ steps.test.outcome }}  # Capture the test status
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -45,13 +43,12 @@ jobs:
           node-version: '14'
 
       - name: Run tests
-        id: test
         run: npm test
 
   deploy:
     name: Deploy Stage
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}  # Ensure deployment happens only on push events
+    if: ${{ success() }}  # Ensures deploy runs if previous jobs succeed
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -59,13 +56,3 @@ jobs:
       - name: Deploy application
         run: echo "Deploying application..."
         # Add your deployment commands here
-
-  # Job to ensure order without `needs` (requires additional conditions)
-  ensure_order:
-    name: Ensure Order
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for build and test
-        run: |
-          echo "Waiting for build and test jobs to complete..."
-          # Check build and test statuses (could use an external service or custom scripts)
