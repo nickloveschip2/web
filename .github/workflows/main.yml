@@ -8,9 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: First interaction
-      uses: actions/first-interaction@v1.3.0
-          
     - name: running command in linux
       run: |
         echo "Hi Nikhil! How are you?"
