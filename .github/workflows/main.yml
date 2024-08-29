@@ -5,11 +5,48 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
-    - name: running command in linux
+    - name: Build Stage
       run: |
+        echo "*********Build Stage*********"
+        echo "Hi Nikhil! How are you?"
+        echo "Hi Nikhil!!!, How to do it"
+        ls -lrth
+        pwd
+        date
+        df -kh
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test Stage
+      run: |
+        echo "*********Test Stage*********"
+        echo "Hi Nikhil! How are you?"
+        echo "Hi Nikhil!!!, How to do it"
+        ls -lrth
+        pwd
+        date
+        df -kh
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy Stage
+      run: |
+        echo "*********Deploy Stage*********"
+        echo "Hi Nikhil! How are you?"
+        echo "Hi Nikhil!!!, How to do it"
+        ls -lrth
+        pwd
+        date
+        df -kh
+  Artifact:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Artifact Creation Stage
+      run: |
+        echo "*********Artifact Creation Stage*********"
         echo "Hi Nikhil! How are you?"
         echo "Hi Nikhil!!!, How to do it"
         ls -lrth
