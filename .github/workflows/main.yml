@@ -1,0 +1,12 @@
+name: My First Github Actions
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: alpine:latest
+    steps:
+    - name: running command in linux
+      run: echo "Hello Nikhil! How are you?"
