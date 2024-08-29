@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: running command in linux
-      run: echo "Hello Nikhil! How are you?"
+      run: 
+        echo "Hi Nikhil! How are you?"
+        echo "Hi Nikhil!!!, How to do it"
