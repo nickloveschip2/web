@@ -52,7 +52,7 @@ jobs:
   Artifact:
     runs-on: ubuntu-latest
     needs: Deploy
-    if: success('Deploy')
+    if: ${{ success('Deploy') }}
     steps:
     - name: Artifact Creation Stage
       run: |
