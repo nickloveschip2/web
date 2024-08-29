@@ -8,7 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: First interaction
+      uses: actions/first-interaction@v1.3.0
+          
     - name: running command in linux
-      run: 
+      run: |
         echo "Hi Nikhil! How are you?"
         echo "Hi Nikhil!!!, How to do it"
+        ls -lrth
+        pwd
+        date
+        df -kh
